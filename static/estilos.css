@@ -1,0 +1,31 @@
+/* estilos.css */
+html, body {
+  overflow: hidden;
+}
+.custom-body {
+    background-image: url('https://alprestamo.com/blog/wp-content/uploads/2022/06/finanzas-personales-en-orden.jpeg'); /* Reemplaza 'fondo.jpg' con la ruta correcta de tu imagen de fondo */
+    background-size: cover; /* Ajusta la imagen de fondo al tamaño de la ventana */
+    background-repeat: no-repeat; /* Evita que la imagen de fondo se repita */
+    background-attachment: fixed; /* Fija la imagen de fondo para que no se desplace con el contenido */
+    height: 100vh; /* Establece la altura del body al 100% de la altura de la ventana */
+    margin: 0; /* Elimina márgenes predeterminados para evitar espacios en blanco */
+    background-position: center top; /* Ajusta la posición de fondo */
+  }
+
+  input, label, select, button, a {
+    font-family: 'Rowdies', sans-serif;
+}
+
+.font-rowdies {
+  font-family: 'Rowdies', sans-serif;
+}
+
+.custom-body2 {
+  background-image: url('https://alprestamo.com/blog/wp-content/uploads/2022/06/finanzas-personales-en-orden.jpeg'); /* Reemplaza 'fondo.jpg' con la ruta correcta de tu imagen de fondo */
+  background-size: cover; /* Ajusta la imagen de fondo al tamaño de la ventana */
+  background-repeat: no-repeat; /* Evita que la imagen de fondo se repita */
+  background-attachment: fixed; /* Fija la imagen de fondo para que no se desplace con el contenido */
+  height: 100vh; /* Establece la altura del body al 100% de la altura de la ventana */
+  margin: 0; /* Elimina márgenes predeterminados para evitar espacios en blanco */
+  
+}

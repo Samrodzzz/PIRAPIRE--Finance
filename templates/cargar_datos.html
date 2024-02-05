@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cargar datos </title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Agrega el enlace al archivo CSS personalizado -->
+    <link href="/static/estilos.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rowdies:wght@300&display=swap" rel="stylesheet">
+
+<body class="custom-body">  
+    <section class="h-screen w-screen flex justify-center items-center">
+        
+        <form class="flex flex-col items-center justify-center bg-gray-700 h-[70%] w-[30%] p-8 rounded-lg shadow-lg" action="/cargar_datos" method="post">
+            <select name="tipo" class="bg-transparent border-b-2 border-gray-500 rounded-full py-2 px-4 mb-3 text-xl focus:outline-none focus:border-blue-500 text-white">
+                <option value='ingreso'>Ingreso</option>
+                <option value='egreso'>Egreso</option>
+            </select>
+        
+            <div class="my-3">
+                <label class="text-3xl text-white" for="monto">Monto: </label>
+                <input type="text" name="monto" id="monto" class="bg-transparent border-b-2 border-gray-500 rounded-full py-2 px-4 text-xl focus:outline-none focus:border-blue-500 text-white" required>
+            </div>
+        
+            <div class="my-3">
+                <label class="text-3xl text-white" for="concepto">Concepto: </label>
+                <input type="text" name="concepto" id="concepto" class="bg-transparent border-b-2 border-gray-500 rounded-full py-2 px-4 text-xl focus:outline-none focus:border-blue-500 text-white" required>  
+            </div>
+            
+            <div class="my-3">
+                <label class="text-3xl text-white" for="fecha">Fecha: </label>
+                <input type="date" name="fecha" id="fecha" class="bg-transparent border-b-2 border-gray-500 rounded-full py-2 px-4 text-xl focus:outline-none focus:border-blue-500 text-white" required>
+            </div>
+        
+            <div class="my-3">
+                <label class="text-3xl text-white" for="descripcion">Descripción: </label>
+                <input type="text" name="descripcion" id="descripcion" class="bg-transparent border-b-2 border-gray-500 rounded-full py-2 px-4 text-xl focus:outline-none focus:border-blue-500 text-white" required>
+            </div>
+        
+            <div class="my-5 flex flex-col">
+                <button class="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded-full text-4xl my-2" type="submit">Cargar</button>
+                <a href="/mostrar_datos" class="bg-green-500 hover:bg-green-700 text-white py-2 px-4 rounded-full text-4xl my-2">Mostrar Registro</a>
+                <a href="/" class="bg-orange-500 hover:bg-orange-700 text-white py-2 px-4 rounded-full text-4xl my-2 text-center">Volver al inicio</a>
+
+            </div>
+            
+        </form>
+        
+        
+
+    </section>
+    
+</body>
+</html>

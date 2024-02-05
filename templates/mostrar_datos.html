@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="/static/estilos.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rowdies:wght@300&display=swap" rel="stylesheet">
+    <title>Datos</title>
+</head>
+<body class="custom-body2">
+<section class="max-w-7xl mx-auto p-4 flex justify-center items-center h-screen">
+    <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded absolute left-4 top-4">
+        <a href="/">Volver al inicio</a>
+    </button>
+    <div class="flex w-full bg-white">
+        <div class="flex-1">
+            <h2 class="text-2xl text-center font-semibold mb-2">INGRESO</h2>
+            <table class="w-full bg-white mb-4">
+                <thead class="bg-red-500">
+                    <tr>
+                        <th class="px-4 py-2">Costo</th>
+                        <th class="px-4 py-2">Concepto</th>
+                        <th class="px-4 py-2">Fecha</th>
+                        <th class="px-4 py-2">Descripción</th>
+                        <th class="px-4 py-2">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for ingreso in lista_ingresos %}
+                    <tr>
+                        <td class="border px-4 py-2">{{ "%.2f"|format(ingreso.monto) }}</td>
+                        <td class="border px-4 py-2">{{ ingreso.concepto }}</td>
+                        <td class="border px-4 py-2">{{ ingreso.fecha }}</td>
+                        <td class="border px-4 py-2">{{ ingreso.descripcion }}</td>
+                        <td class="border px-4 py-2">
+                            <a href="/actualizar-ingreso/{{ ingreso.id }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded w-24 text-center">
+                                Actualizar
+                            </a>
+                            <form action="/eliminar_ingreso" method="post">
+                                <input type="hidden" name="ingreso_id" value="{{ ingreso.id }}">
+                                <button type="submit" class="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 rounded w-24 text-center">
+                                    Eliminar
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="flex-1">
+            <h2 class="text-2xl text-center font-semibold mb-2">EGRESO</h2>
+            <table class="w-full bg-white mb-4">
+                <thead class="bg-red-500">
+                    <tr>
+                        <th class="px-4 py-2">Costo</th>
+                        <th class="px-4 py-2">Concepto</th>
+                        <th class="px-4 py-2">Fecha</th>
+                        <th class="px-4 py-2">Descripción</th>
+                        <th class="px-4 py-2">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for egreso in lista_egresos %}
+                    <tr>
+                        <td class="border px-4 py-2">{{ "%.2f"|format(egreso.monto) }}</td>
+                        <td class="border px-4 py-2">{{ egreso.concepto }}</td>
+                        <td class="border px-4 py-2">{{ egreso.fecha }}</td>
+                        <td class="border px-4 py-2">{{ egreso.descripcion }}</td>
+                        <td class="border px-4 py-2">
+                            <a href="/actualizar-egreso/{{ egreso.id }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded w-24 text-center">
+                                Actualizar
+                            </a>
+                            <form action="/eliminar_egreso" method="post">
+                                <input type="hidden" name="egreso_id" value="{{ egreso.id }}">
+                                <button type="submit" class="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 rounded w-24 text-center">
+                                    Eliminar
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+</body>
+</html>
+
